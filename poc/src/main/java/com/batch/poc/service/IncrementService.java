@@ -26,4 +26,9 @@ public class IncrementService {
 
     }
 
+    public void divideVariableBy0(int variable) {
+        this.variable = variable / 0;
+        System.out.println("La variable * 10 est : " + this.variable);
+
+    }
 }

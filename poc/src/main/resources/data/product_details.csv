@@ -1,0 +1,19 @@
+product_id,product_name,product_category,product_price
+1,Smartphone X,Electronics,799.99
+2,Laptop Pro,Electronics,1299.99
+3,Wireless Earbuds,Electronics,149.99
+4,Smart Watch,Electronics,199.99
+5,4K TV,Electronics,899.99
+6,Bluetooth Speaker,Electronics,79.99
+7,Gaming Mouse,Electronics,49.99
+8,Mechanical Keyboard,Electronics,89.99
+9,Tablet Mini,Electronics,299.99
+10,Noise-Cancelling Headphones,Electronics,349.99
+11,Coffee Maker,Home & Kitchen,59.99
+12,Air Fryer,Home & Kitchen,99.99
+13,Blender,Home & Kitchen,49.99
+14,Toaster,Home & Kitchen,29.99
+15,Vacuum Cleaner,Home & Kitchen,199.99
+16,Rice Cooker,Home & Kitchen,69.99
+17,Microwave Oven,Home & Kitchen,129.99
+18,Food Processor,Home & Kitchen,89.99

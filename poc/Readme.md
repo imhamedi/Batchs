@@ -59,3 +59,40 @@ eg :
                 .build();
     }
 
+=============
+1. Batch Status
+Le Batch Status représente l'état global de l'exécution d'un Job ou d'un Step du point de vue du framework Spring Batch. C'est une vue d'ensemble de l'exécution, souvent utilisée pour surveiller et diagnostiquer les processus.
+
+Valeurs possibles pour Batch Status :
+STARTING : Le job ou le step est en cours de démarrage.
+STARTED : Le job ou le step a démarré et est en cours d'exécution.
+COMPLETED : Le job ou le step s'est terminé avec succès.
+STOPPING : Le job ou le step est en cours d'arrêt (interruption manuelle ou conditionnelle).
+STOPPED : Le job ou le step a été arrêté avant de se terminer.
+FAILED : Le job ou le step s'est terminé avec une erreur.
+UNKNOWN : L'état n'est pas identifiable.
+2. Exit Status
+Le Exit Status fournit une information plus granulaire et contextuelle sur la façon dont un Step ou un Job s'est terminé. Contrairement au Batch Status, il est destiné à transmettre des messages personnalisés ou des informations spécifiques sur le résultat d'une exécution.
+
+Valeurs par défaut pour Exit Status :
+COMPLETED : Indique que le step ou le job s'est terminé avec succès (même si des exceptions ou des warnings mineurs ont été gérés).
+FAILED : Indique qu'il y a eu une erreur ou un échec.
+| Aspect           | Batch Status                          | Exit Status                                            |
+|==================|=======================================|==========================================|=============|
+| But              | État global de l'exécution            | Résultat détaillé ou spécifique                        |
+| Valeurs          | Pré-définies par Spring Batch         | Pré-définies + personnalisables                        |
+| Scope            | Utilisé pour surveiller les jobs/steps| Utilisé pour la logique conditionnelle ou des messages |
+| Personnalisable  | Non                                   | Oui                                                    |
+
+=============Custom exit status
+On peut utiliser soit les listener (exemple ici : FirstStepExecutionListener)
+ou les job execution decider
+
+=========chunck
+Le chunk-oriented processing repose sur le triptyque suivant :
+
+ItemReader : Lit un ou plusieurs éléments d’une source (par exemple, une base de données, un fichier CSV, etc.).
+ItemProcessor : Effectue des transformations ou des validations sur chaque élément lu (facultatif).
+ItemWriter : Écrit les éléments traités vers une destination (par exemple, un autre fichier, une base de données, etc.).
+L’ensemble du traitement est configuré en définissant une taille de chunk.
+

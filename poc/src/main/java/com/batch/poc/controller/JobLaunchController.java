@@ -19,9 +19,12 @@ public class JobLaunchController {
 
     @Autowired
     private JobLauncher jobLauncher;
-
     @Autowired
     @Qualifier("firstJob")
+    private Job firstJob;
+
+    @Autowired
+    @Qualifier("chunkJob")
     private Job job;
 
     @GetMapping("/launchJob/{id}")
@@ -30,4 +33,13 @@ public class JobLaunchController {
         JobParameters jobParameters = new JobParametersBuilder().addString("param", id).toJobParameters();
         jobLauncher.run(this.job, jobParameters);
     }
+
+    @GetMapping("/launchFirstJob/{id}")
+    public void handleFirstJob(@PathVariable("id") String id)
+            throws JobExecutionAlreadyRunningException, JobRestartException,
+            JobInstanceAlreadyCompleteException, JobParametersInvalidException {
+        JobParameters jobParameters = new JobParametersBuilder().addString("param", id).toJobParameters();
+        jobLauncher.run(this.firstJob, jobParameters);
+    }
+
 }
