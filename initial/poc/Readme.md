@@ -96,3 +96,8 @@ ItemProcessor : Effectue des transformations ou des validations sur chaque élé
 ItemWriter : Écrit les éléments traités vers une destination (par exemple, un autre fichier, une base de données, etc.).
 L’ensemble du traitement est configuré en définissant une taille de chunk.
 
+===
+git status
+git add .
+git commit -m "MSG"
+git push origin main
