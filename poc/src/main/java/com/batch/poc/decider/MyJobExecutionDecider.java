@@ -9,7 +9,6 @@ public class MyJobExecutionDecider implements JobExecutionDecider {
 
 	@Override
 	public FlowExecutionStatus decide(JobExecution jobExecution, StepExecution stepExecution) {
-		// TODO Auto-generated method stub
 		return new FlowExecutionStatus("TEST_STATUS");
 	}
 
