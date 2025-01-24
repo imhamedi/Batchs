@@ -1,3 +1,5 @@
+mvn clean package pour générer le jar
+
 Step
 1-Tasklet step : Single task, implementing the Tasklet interface with the execute() method
 2-Chunk-based step: Processes data in chunks by reading, processing, and writing in batches for efficient handling.
