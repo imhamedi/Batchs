@@ -15,16 +15,16 @@ public class JobLaunchController {
 
 	@Autowired
 	private JobLauncher jobLauncher;
-	
+
 	@Autowired
-	@Qualifier("firstJob")
+	@Qualifier("job2")
 	private Job job;
-	
+
 	@GetMapping("/launchJob/{id}")
 	public void handle(@PathVariable("id") String id) throws Exception {
-		
+
 		JobParameters jobParameters = new JobParametersBuilder().addString("param", id).toJobParameters();
 		jobLauncher.run(job, jobParameters);
-		
+
 	}
 }
